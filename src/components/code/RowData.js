@@ -8,9 +8,9 @@ class RowData extends React.Component {
         let leftBracket = `{`;
         let rightBracket = `}`;
         let result = [];
-        console.log(this.props.data.attributes);
+        // console.log(this.props.data.attributes);
         this.props.data.attributes.forEach((x, i) => {
-            result.push(<div key={i}> <span className="tabspace"/>{x.field}: {leftBracket}<br /> 
+            result.push(<div key={i}> <span className="tabspace"/>{x.field}: {leftBracket}<br />
             <span className="tabspace"/><span className="tabspace"/>type: {x.type} <br />
             <span className="tabspace"/>{rightBracket}</div>)
         });
