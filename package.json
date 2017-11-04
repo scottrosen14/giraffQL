@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "draggable": "^4.1.2",
-    "react": "^16.0.0",
+    "raphael": "^2.2.7",
+    "react": "^15.6.1",
     "react-bootstrap-table": "^4.1.1",
-    "react-dom": "^16.0.0",
+    "react-dom": "^15.6.1",
     "react-draggable": "^3.0.3",
+    "react-raphael": "^0.9.0",
     "react-scripts": "1.0.15"
   },
   "scripts": {
