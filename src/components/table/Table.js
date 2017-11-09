@@ -58,12 +58,13 @@ class Table extends React.Component {
             { value: 'GraphQLID', label:'GraphQLID' },
             { value: 'GraphQLList', label:'GraphQLList'}
         ]
-            for(let i=0; i<data.tables.length; i++) {
+        for(let i=0; i<data.tables.length; i++) {
+            if (data.tables[i]) {
                 let container = {}
                 container.value = data.tables[i].name
                 container.label = data.tables[i].name
                 options.push(container)
-
+            }
         }
         return (
 

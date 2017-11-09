@@ -5,7 +5,11 @@ import React, { Component } from 'react';
 class RowData extends React.Component {
 
     componentWillReceiveProps = (nextProps) => {
-        (this.props.data.attributes !== nextProps.data.attributes) ? true : false;
+        let table = this.props.data;
+        console.log('editor data', this.props.data);
+        if (this.props.data) {
+          (this.props.data.attributes !== nextProps.data.attributes) ? true : false;
+        }
     }
 
     render() {
@@ -16,6 +20,7 @@ class RowData extends React.Component {
         let attr = this.props.data.attributes;
         let closeBracket;
         // console.log(this.props.data.attributes);
+        if (this.props.data) {
         attr.forEach((x, i) => {
             if (x.field !== "") {
                 console.log(`attr.length: ${attr.length} result.length: ${result.length}`);
@@ -23,10 +28,11 @@ class RowData extends React.Component {
                     <span className="tabspace" />{x.field}: {leftBracket}<br />
                     <span className="tabspace" /><span className="tabspace" />type: {x.type} <br />
                     <span className="tabspace" />{rightBracket}
-                    {(attr.length === 1) ?  '' : (attr.length-1 === result.length) ? '' : comma} 
+                    {(attr.length === 1) ?  '' : (attr.length-1 === result.length) ? '' : comma}
                 </div>)
             }
         });
+        }
 
         return (
             <div>

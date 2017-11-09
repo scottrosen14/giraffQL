@@ -204,9 +204,12 @@ class App extends Component {
   }
 
   deleteTable = (index) => {
+    console.log('delete is working')
     let spliceit = Object.assign({}, this.state.data)
-    spliceit.tables.splice(index,1);
+    // spliceit.tables.splice(index,1);
+    spliceit.tables[index] = null;
     this.setState({spliceit})
+    console.log('delete state', this.state)
   }
 
   deleteAllTables = () => {
