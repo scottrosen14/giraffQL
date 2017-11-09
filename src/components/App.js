@@ -10,9 +10,13 @@ import '../index.css';
 import '../css/prism.css';
 //SCHEMA CODE COMPONENT//
 import SchemaCode from './code/SchemaCode';
+
+import colors from './table/colors'
 //PRISM DEPENDENCIES
 const PrismDecorator = require('draft-js-prism');
 const Prism = require('prismjs')
+
+
 
 
 //PRISM LIBRARY FOR SYNTAX HIGHLIGHTING//
@@ -85,18 +89,18 @@ class App extends Component {
   }
 
   onAddTable = () => {
-    let newstate = this.state.data.tables.slice()
+    let newState = this.state.data.tables.slice();
     this.setState({
-      data:{
-        tables:newstate.concat({
+      data: {
+        tables:newState.concat({
             name: '',
             attributes: [
-              { field: '', type: '' }
+              { field: '', type: '' },
             ]
-          })
-    }
-  })
-}
+        })
+      }
+    })
+  }
 
 
   //this is not correct way to do because state has to be immutable (but it's working)
@@ -150,7 +154,6 @@ class App extends Component {
     keys.forEach((key, i) => {
       stateNew[key] = this.state[key];
     })
-    console.log('stateNew', stateNew)
     stateNew.data.tables = [];
     this.setState(stateNew);
   }
