@@ -15,16 +15,16 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: separate; /* changed from collapse to get border-radius to work */
     margin: 10px;
-    border-top: 10px solid #BD9A63; /* need border-top to even out top border */
+    border-top: 10px solid #fbe4a1; /*#BD9A63;*/ /* need border-top to even out top border */
     border-radius: 15px; /* added border-radius */
     position: absolute;
     border-spacing: 0px;
 }
 
 .table td, .table th {
-    border: 8px solid #BD9A63;
+    border: 8px solid #fbe4a1; /*#977359;*/ /*#BD9A63*/;
     padding: 0px;
-    background-color: #977359;
+    background-color: #fbe4a1; /*#FFD000;*/ /*#977359*/;
     width: 100%;
     border-spacing: 1px;
 }
@@ -91,7 +91,7 @@
 .addRow {
     padding: 8px 90px;
     border-radius: 4px;
-    background-color: #9FA767; /*rgba(30,130,76,0.4); */ /* made green color translucent */
+    background-color: #9FA767; /*rgba(30,130,76,0.4);*/ /* made green color translucent */
     border: none;
     font-weight: bold;
     font-size: 16px;

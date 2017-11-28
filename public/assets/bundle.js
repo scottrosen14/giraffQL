@@ -45217,7 +45217,7 @@ var _reactDom = __webpack_require__(10);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-__webpack_require__(282);
+__webpack_require__(704);
 
 var _Divider = __webpack_require__(285);
 
@@ -45229,17 +45229,17 @@ var _registerServiceWorker2 = _interopRequireDefault(_registerServiceWorker);
 
 var _reactRouterDom = __webpack_require__(42);
 
-__webpack_require__(683);
+__webpack_require__(706);
 
-__webpack_require__(685);
+__webpack_require__(708);
 
-__webpack_require__(687);
+__webpack_require__(710);
 
-__webpack_require__(689);
+__webpack_require__(712);
 
-__webpack_require__(691);
+__webpack_require__(714);
 
-__webpack_require__(693);
+__webpack_require__(716);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62433,51 +62433,8 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 282 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(283);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(27)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 283 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(26)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/* body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n} */\n\nbody {\n  margin: 0;\n  padding: 2em;\n  background: #333;\n  font-family: sans-serif;\n  width:100%;\n  height:100%;\n\n}\n\n.DraftEditor-root{\n  background: rgb(51,51,51);\n  margin: 0px;\n  padding: 0 10px;\n  border-radius: .3em;\n  /*border: 10px solid #BD9A63; #6F4A38;*/\n  font-size: 20px;\n  max-height: 1000px;\n  overflow: auto;\n  position: absolute;\n  font-family: 'Consolas', 'monaco', monospace;\n}\n\nbutton{\n  background: #999;\n  color: #fff;\n  border: none;\n  padding: .5em;\n  cursor: pointer;\n  margin-bottom: 1em;\n  margin-right: 1em;\n  border-radius: .2em;\n}\n\nbutton:hover{\n  background: #888;\n}\n\npre{\n  border: 1px solid #ccc;\n  background: #f0f0f0;\n  border-radius: .2em;\n  padding: .5em;\n  margin: 0;\n}\n\n\npre > pre{\n  background: none;\n  border: none;\n  padding: 0;\n}\n\n.schemaCode{\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid #977359;\n  background: #977359;\n  border-radius: .2em;\n  padding: .5em;\n  margin: 10;\n  /* width:100% */\n}\n\n.schemaType{\n  color: black;\n  text-align: left;\n  font-family: monospace;\n  font-size: 14px;\n  border-style: solid;\n  border: gray solid 2px;\n  background: #fff;\n  border-radius: .3em;\n  padding: 1em;\n  margin: auto;\n  width:100%;\n}\n\n.tabspace{\n  padding-left: 5em;\n}", ""]);
-
-// exports
-
-
-/***/ }),
+/* 282 */,
+/* 283 */,
 /* 284 */
 /***/ (function(module, exports) {
 
@@ -107088,7 +107045,7 @@ var _mainimage = __webpack_require__(678);
 
 var _mainimage2 = _interopRequireDefault(_mainimage);
 
-var _GitHubMark32px = __webpack_require__(679);
+var _GitHubMark32px = __webpack_require__(718);
 
 var _GitHubMark32px2 = _interopRequireDefault(_GitHubMark32px);
 
@@ -107505,12 +107462,7 @@ module.exports = __webpack_require__.p + "2bef78d2d90cc24617025a244b89c14c.png";
 module.exports = __webpack_require__.p + "4ba2c735948e564bfd34c6d2867bd193.png";
 
 /***/ }),
-/* 679 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "f87561b8bb354ef83b09a66e54f70e08.png";
-
-/***/ }),
+/* 679 */,
 /* 680 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -107927,6 +107879,15 @@ var Feature = function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      var muiStyles = {
+        drawer: {
+          'background-color': 'rgb(51, 51, 51)'
+        },
+        menuItem: {
+          color: '#FFD300'
+        }
+      };
+
       return _react2.default.createElement(
         'div',
         { className: 'mainpage' },
@@ -107944,6 +107905,7 @@ var Feature = function (_Component) {
           _react2.default.createElement(
             _Drawer2.default,
             { className: 'drawer',
+              containerStyle: muiStyles.drawer,
               docked: false,
               width: 200,
               open: this.state.open,
@@ -107961,7 +107923,7 @@ var Feature = function (_Component) {
               { to: '/' },
               _react2.default.createElement(
                 _MenuItem2.default,
-                { onClick: this.handleClose },
+                { style: muiStyles.menuItem, onClick: this.handleClose },
                 'Home'
               )
             ),
@@ -107970,7 +107932,7 @@ var Feature = function (_Component) {
               { to: '/feature' },
               _react2.default.createElement(
                 _MenuItem2.default,
-                { onClick: this.handleClose },
+                { style: muiStyles.menuItem, onClick: this.handleClose },
                 'Feature'
               )
             ),
@@ -107980,7 +107942,7 @@ var Feature = function (_Component) {
               ' ',
               _react2.default.createElement(
                 _MenuItem2.default,
-                { onClick: this.handleClose },
+                { style: muiStyles.menuItem, onClick: this.handleClose },
                 'App'
               )
             ),
@@ -107989,13 +107951,13 @@ var Feature = function (_Component) {
               { to: '/aboutus' },
               _react2.default.createElement(
                 _MenuItem2.default,
-                { onClick: this.handleClose },
+                { style: muiStyles.menuItem, onClick: this.handleClose },
                 'About us'
               )
             ),
             _react2.default.createElement(
               _MenuItem2.default,
-              { onClick: this.handleClose },
+              { style: muiStyles.menuItem, onClick: this.handleClose },
               'Download'
             )
           ),
@@ -108333,13 +108295,34 @@ function unregister() {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 683 */
+/* 683 */,
+/* 684 */,
+/* 685 */,
+/* 686 */,
+/* 687 */,
+/* 688 */,
+/* 689 */,
+/* 690 */,
+/* 691 */,
+/* 692 */,
+/* 693 */,
+/* 694 */,
+/* 695 */,
+/* 696 */,
+/* 697 */,
+/* 698 */,
+/* 699 */,
+/* 700 */,
+/* 701 */,
+/* 702 */,
+/* 703 */,
+/* 704 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(684);
+var content = __webpack_require__(705);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108353,8 +108336,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./App.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./App.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./index.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108364,7 +108347,52 @@ if(false) {
 }
 
 /***/ }),
-/* 684 */
+/* 705 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(26)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/* body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n} */\n\nbody {\n  margin: 0;\n  padding: 2em;\n  background: #333;\n  font-family: sans-serif;\n  width:100%;\n  height:100%;\n\n}\n\n.DraftEditor-root{\n  background: rgb(51,51,51);\n  margin: 0px;\n  padding: 0 10px;\n  border-radius: .3em;\n  /*border: 10px solid #BD9A63; #6F4A38;*/\n  font-size: 20px;\n  max-height: 1000px;\n  overflow: auto;\n  position: absolute;\n  font-family: 'Consolas', 'monaco', monospace;\n}\n\nbutton{\n  background: #999;\n  color: #fff;\n  border: none;\n  padding: .5em;\n  cursor: pointer;\n  margin-bottom: 1em;\n  margin-right: 1em;\n  border-radius: .2em;\n}\n\nbutton:hover{\n  background: #888;\n}\n\npre{\n  border: 1px solid #ccc;\n  background: #f0f0f0;\n  border-radius: .2em;\n  padding: .5em;\n  margin: 0;\n}\n\n\npre > pre{\n  background: none;\n  border: none;\n  padding: 0;\n}\n\n.schemaCode{\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid #977359;\n  background: #977359;\n  border-radius: .2em;\n  padding: .5em;\n  margin: 10;\n  /* width:100% */\n}\n\n.schemaType{\n  color: black;\n  text-align: left;\n  font-family: monospace;\n  font-size: 14px;\n  border-style: solid;\n  border: gray solid 2px;\n  background: #fff;\n  border-radius: .3em;\n  padding: 1em;\n  margin: auto;\n  width:100%;\n}\n\n.tabspace{\n  padding-left: 5em;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 706 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(707);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(27)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./App.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 707 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108378,13 +108406,13 @@ exports.push([module.i, "html {\n  width:100%;\n  height:100%;\n}\nbody {\n  wid
 
 
 /***/ }),
-/* 685 */
+/* 708 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(686);
+var content = __webpack_require__(709);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108398,8 +108426,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Home.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Home.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./Home.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./Home.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108409,7 +108437,7 @@ if(false) {
 }
 
 /***/ }),
-/* 686 */
+/* 709 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108423,13 +108451,13 @@ exports.push([module.i, "#root {\n    width:100%;\n    height:1200px;;\n}\n#rout
 
 
 /***/ }),
-/* 687 */
+/* 710 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(688);
+var content = __webpack_require__(711);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108443,8 +108471,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./AppMenu.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./AppMenu.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./AppMenu.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./AppMenu.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108454,7 +108482,7 @@ if(false) {
 }
 
 /***/ }),
-/* 688 */
+/* 711 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108462,19 +108490,19 @@ exports = module.exports = __webpack_require__(26)(undefined);
 
 
 // module
-exports.push([module.i, ".appBar {\n  width:100%;\n  height:58px;\n  display:flex;\n  justify-content: space-between;\n  align-items: center;\n  color: white;\n}\n\n/*add and delete buttons*/\n.addAndClearBtns {\n  float: left;\n  margin-top: 8px;\n  color: rgb(51,51,51);\n  font-weight: bold;\n  border: 2px solid rgb(51,51,51);\n  border-radius: 50%;\n  background-color: #FFD000;\n}\n\n#createTableBtn {\n  /*color: white;*/\n  background-color: rgba(30,130,76,1);\n}\n\n#createTableBtn:hover {\n  color: rgba(30,130,76,1);\n  background-color: white;\n  border-color: white;\n}\n\n#clearBtn {\n  background-color: rgba(166,0,0,1);\n}\n\n#clearBtn:hover {\n  color: rgba(166,0,0,1);\n  background-color: white;\n  border-color: white;\n}\n\n.save {\n  color: rgb(51,51,51);\n  margin-top: 10px;\n  background-color: #FFD000;\n  font-size: 18px;\n  font-weight: bold;\n  padding: 10px\n}\n\n.save:hover {\n  background-color: white;\n  color: rgb(51,51,51);\n}", ""]);
+exports.push([module.i, ".appBar {\n  width:100%;\n  height:58px;\n  display:flex;\n  justify-content: space-between;\n  align-items: center;\n  color: white;\n}\n\n/*add and delete buttons*/\n.addAndClearBtns {\n  float: left;\n  margin-top: 8px;\n  color: rgb(51,51,51);\n  font-weight: bold;\n  border: 2px solid rgb(51,51,51);\n  border-radius: 50%;\n  background-color: #FFD000;\n}\n\n#createTableBtn {\n  /*color: white;*/\n  background-color: #9FA767; /*rgba(30,130,76,1);*/\n}\n\n#createTableBtn:hover {\n  color: rgba(30,130,76,0.4);\n  background-color: white;\n  border-color: white;\n}\n\n#clearBtn {\n  background-color: #9B4433; /*rgba(166,0,0,1);*/\n}\n\n#clearBtn:hover {\n  color: rgba(166,0,0,1);\n  background-color: white;\n  border-color: white;\n}\n\n.save {\n  color: rgb(51,51,51);\n  margin-top: 10px;\n  background-color: #fbe4a1; /*#FFD000;*/\n  font-size: 18px;\n  font-weight: bold;\n  padding: 10px\n}\n\n.save:hover {\n  background-color: white;\n  color: rgb(51,51,51);\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 689 */
+/* 712 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(690);
+var content = __webpack_require__(713);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108488,8 +108516,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Table.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Table.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./Table.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./Table.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108499,7 +108527,7 @@ if(false) {
 }
 
 /***/ }),
-/* 690 */
+/* 713 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108507,19 +108535,19 @@ exports = module.exports = __webpack_require__(26)(undefined);
 
 
 // module
-exports.push([module.i, "/*tables container*/\n.tables {\n  margin-top: 10px;\n  width: 100%;\n  height: 10000px;\n  /*height: 100%;*/\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index:2;\n  /*overflow: scroll;*/\n}\n\n.table {\n    font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n    border-collapse: separate; /* changed from collapse to get border-radius to work */\n    margin: 10px;\n    border-top: 10px solid #BD9A63; /* need border-top to even out top border */\n    border-radius: 15px; /* added border-radius */\n    position: absolute;\n    border-spacing: 0px;\n}\n\n.table td, .table th {\n    border: 8px solid #BD9A63;\n    padding: 0px;\n    background-color: #977359;\n    width: 100%;\n    border-spacing: 1px;\n}\n\n/*\n.redTable {\n    font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n    border-collapse: separate;\n    margin: 10px;\n    border-top:3px solid red;\n    border-radius: 15px;\n    position: relative;\n}\n\n.redTable td, .redTable th {\n    border: 1px solid red;\n    padding: 8px;\n    background-color: #977359;\n}\n*/\n\n.alert {\n    font-size:20px;\n    color:red\n}\n\n\n.table tr:hover {background-color: #ddd;}\n\n.table th {\n    padding-top: 12px;\n    padding-bottom: 12px;\n    text-align: left;\n    background-color: #EFD962;\n    color: white;\n}\n\n.tableName {\n    display: block;\n    float:right;\n    height:34px; /* changed from 29px to match select box*/\n    width: 300px;\n    padding:0px;\n    font-size:16px;\n    border-color: solid black;\n}\n\n.form-group {\n    margin: auto 0;\n    text-align: center;\n}\n\n/*add delete and save buttons*/\n.toolPanel {\n    /*border: 2px solid red;*/\n    padding-top: 5px;\n}\n\n.addRowWrap {\n    border-bottom-left-radius: 20px; /* need this to round the bottom borders */\n    border-bottom-right-radius: 20px; /* need this to round the bottom borders */\n}\n\n.addRow {\n    padding: 8px 90px;\n    border-radius: 4px;\n    background-color: #9FA767; /*rgba(30,130,76,0.4); */ /* made green color translucent */\n    border: none;\n    font-weight: bold;\n    font-size: 16px;\n    color: white;\n}\n\n.addRow:hover {\n    background-color: white;\n    color: rgba(30,130,76,0.4);\n}\n\n.typetd {\n    /*width:180px;*/\n    /*text-align: center;*/\n}\n\n.deletetablebutton {\n    color: rgb(166, 0, 0);\n    border: none;\n    background-color: white; /* made color translucent */\n    border-radius: 20px;\n    width: 20px;\n    height: 20px;\n    line-height: 20px;\n    text-align: center;;\n    position: absolute;\n    top: -15px;\n    right: -15px;\n    padding: 0;\n    margin: 0;\n    font-weight: bold;\n    cursor: pointer;\n  }\n\n.deletetablebutton:hover {\n    color: white;\n    background-color: rgb(166, 0, 0);\n}\n\n.deleterowbutton {\n    width:7%;\n    font-size: 18px;\n    float:right;\n    cursor:pointer;\n    margin-top:6px;\n    margin-left: 3px;\n    color: white;\n}\n\n.deleterowbutton:hover { /* change color on hover */\n    color: rgb(51, 51, 51);\n}\n\n.propertyinput {\n    height:34px; /*changed from 29px to match select box*/\n    padding:0px;\n    font-size:16px;\n    text-align: center;\n    margin-top:1px;\n    border-color: solid black;\n    width: 95%;\n}\n\n/*property type dropdown*/\n.dropdown {\n    width:90%;\n    line-height: 1;\n }\n\n.Select-control {\n    width:90%;\n}\n\n.Select-input {\n    width:100px;\n}\n\n.select-placeholder {\n    margin-top:2px;\n    font-size:16px\n}\n\n/*dragging feature*/\n.drag-handle {\n    position: relative;\n    width:30px;\n    height: 29px;\n    float:left;\n}\n.drag {\n    display: block;\n    margin-top:21px;\n    width: 30px;\n    height: 29px;\n}\n\n.react-draggable {\n    width: 372px;\n}\n\n/* giraffe icon */\n.img {\n    width: 30px;\n    height: 29px;\n    border-radius: 50%;\n    pointer-events: none;\n    user-select:none;\n}\n\n/*toolbar not currently used*/\n.button_base {\n  border-color: solid #fbe4a1\n}\n.button_base:hover {\n  cursor: pointer;\n  border-color: solid #fbe4a1;\n}\n.b02_slide_in {\n  overflow: hidden;\n  border: #000000 solid 1px;\n}\n\n.b02_slide_in div {\n  position: absolute;\n  text-align: center;\n  width: 20%;\n  height: 55px;\n  box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  padding: 10px;\n  border-radius:15px;\n}\n\n.b02_slide_in div:nth-child(1) {\n  margin-top:1px;\n  color:#F5ECB1 ;\n  background-color: #6F4A38 ;\n}\n\n.b02_slide_in div:nth-child(2) {\n  margin-top:2px;\n  background-color: #F0ECE1     ;\n  transition: top 0.1s ease;\n  -webkit-transition: top 0.1s ease;\n  -moz-transition: top 0.1s ease;\n  top: -60px;\n  border-radius:15px;\n\n}\n\n.b02_slide_in div:nth-child(3) {\n  color: #977359;\n  transition: opacity 0.1s ease;\n  -webkit-transition: opacity 0.1s ease;\n  -moz-transition: opacity 0.1s ease;\n  opacity: 0;\n}\n\n.b02_slide_in:hover div:nth-child(2) {\n  top: 0px;\n  transition: top 0.1s ease;\n  -webkit-transition: top 0.1s ease;\n  -moz-transition: top 0.1s ease;\n}\n\n.b02_slide_in:hover div:nth-child(3) {\n  opacity: 1;\n  transition: opacity 0.1s ease;\n  -webkit-transition: opacity 0.1s ease;\n  -moz-transition: opacity 0.1s ease;\n}\n\n", ""]);
+exports.push([module.i, "/*tables container*/\n.tables {\n  margin-top: 10px;\n  width: 100%;\n  height: 10000px;\n  /*height: 100%;*/\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index:2;\n  /*overflow: scroll;*/\n}\n\n.table {\n    font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n    border-collapse: separate; /* changed from collapse to get border-radius to work */\n    margin: 10px;\n    border-top: 10px solid #fbe4a1; /*#BD9A63;*/ /* need border-top to even out top border */\n    border-radius: 15px; /* added border-radius */\n    position: absolute;\n    border-spacing: 0px;\n}\n\n.table td, .table th {\n    border: 8px solid #fbe4a1; /*#977359;*/ /*#BD9A63*/;\n    padding: 0px;\n    background-color: #fbe4a1; /*#FFD000;*/ /*#977359*/;\n    width: 100%;\n    border-spacing: 1px;\n}\n\n/*\n.redTable {\n    font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\n    border-collapse: separate;\n    margin: 10px;\n    border-top:3px solid red;\n    border-radius: 15px;\n    position: relative;\n}\n\n.redTable td, .redTable th {\n    border: 1px solid red;\n    padding: 8px;\n    background-color: #977359;\n}\n*/\n\n.alert {\n    font-size:20px;\n    color:red\n}\n\n\n.table tr:hover {background-color: #ddd;}\n\n.table th {\n    padding-top: 12px;\n    padding-bottom: 12px;\n    text-align: left;\n    background-color: #EFD962;\n    color: white;\n}\n\n.tableName {\n    display: block;\n    float:right;\n    height:34px; /* changed from 29px to match select box*/\n    width: 300px;\n    padding:0px;\n    font-size:16px;\n    border-color: solid black;\n}\n\n.form-group {\n    margin: auto 0;\n    text-align: center;\n}\n\n/*add delete and save buttons*/\n.toolPanel {\n    /*border: 2px solid red;*/\n    padding-top: 5px;\n}\n\n.addRowWrap {\n    border-bottom-left-radius: 20px; /* need this to round the bottom borders */\n    border-bottom-right-radius: 20px; /* need this to round the bottom borders */\n}\n\n.addRow {\n    padding: 8px 90px;\n    border-radius: 4px;\n    background-color: #9FA767; /*rgba(30,130,76,0.4);*/ /* made green color translucent */\n    border: none;\n    font-weight: bold;\n    font-size: 16px;\n    color: white;\n}\n\n.addRow:hover {\n    background-color: white;\n    color: rgba(30,130,76,0.4);\n}\n\n.typetd {\n    /*width:180px;*/\n    /*text-align: center;*/\n}\n\n.deletetablebutton {\n    color: rgb(166, 0, 0);\n    border: none;\n    background-color: white; /* made color translucent */\n    border-radius: 20px;\n    width: 20px;\n    height: 20px;\n    line-height: 20px;\n    text-align: center;;\n    position: absolute;\n    top: -15px;\n    right: -15px;\n    padding: 0;\n    margin: 0;\n    font-weight: bold;\n    cursor: pointer;\n  }\n\n.deletetablebutton:hover {\n    color: white;\n    background-color: rgb(166, 0, 0);\n}\n\n.deleterowbutton {\n    width:7%;\n    font-size: 18px;\n    float:right;\n    cursor:pointer;\n    margin-top:6px;\n    margin-left: 3px;\n    color: white;\n}\n\n.deleterowbutton:hover { /* change color on hover */\n    color: rgb(51, 51, 51);\n}\n\n.propertyinput {\n    height:34px; /*changed from 29px to match select box*/\n    padding:0px;\n    font-size:16px;\n    text-align: center;\n    margin-top:1px;\n    border-color: solid black;\n    width: 95%;\n}\n\n/*property type dropdown*/\n.dropdown {\n    width:90%;\n    line-height: 1;\n }\n\n.Select-control {\n    width:90%;\n}\n\n.Select-input {\n    width:100px;\n}\n\n.select-placeholder {\n    margin-top:2px;\n    font-size:16px\n}\n\n/*dragging feature*/\n.drag-handle {\n    position: relative;\n    width:30px;\n    height: 29px;\n    float:left;\n}\n.drag {\n    display: block;\n    margin-top:21px;\n    width: 30px;\n    height: 29px;\n}\n\n.react-draggable {\n    width: 372px;\n}\n\n/* giraffe icon */\n.img {\n    width: 30px;\n    height: 29px;\n    border-radius: 50%;\n    pointer-events: none;\n    user-select:none;\n}\n\n/*toolbar not currently used*/\n.button_base {\n  border-color: solid #fbe4a1\n}\n.button_base:hover {\n  cursor: pointer;\n  border-color: solid #fbe4a1;\n}\n.b02_slide_in {\n  overflow: hidden;\n  border: #000000 solid 1px;\n}\n\n.b02_slide_in div {\n  position: absolute;\n  text-align: center;\n  width: 20%;\n  height: 55px;\n  box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  padding: 10px;\n  border-radius:15px;\n}\n\n.b02_slide_in div:nth-child(1) {\n  margin-top:1px;\n  color:#F5ECB1 ;\n  background-color: #6F4A38 ;\n}\n\n.b02_slide_in div:nth-child(2) {\n  margin-top:2px;\n  background-color: #F0ECE1     ;\n  transition: top 0.1s ease;\n  -webkit-transition: top 0.1s ease;\n  -moz-transition: top 0.1s ease;\n  top: -60px;\n  border-radius:15px;\n\n}\n\n.b02_slide_in div:nth-child(3) {\n  color: #977359;\n  transition: opacity 0.1s ease;\n  -webkit-transition: opacity 0.1s ease;\n  -moz-transition: opacity 0.1s ease;\n  opacity: 0;\n}\n\n.b02_slide_in:hover div:nth-child(2) {\n  top: 0px;\n  transition: top 0.1s ease;\n  -webkit-transition: top 0.1s ease;\n  -moz-transition: top 0.1s ease;\n}\n\n.b02_slide_in:hover div:nth-child(3) {\n  opacity: 1;\n  transition: opacity 0.1s ease;\n  -webkit-transition: opacity 0.1s ease;\n  -moz-transition: opacity 0.1s ease;\n}\n\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 691 */
+/* 714 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(692);
+var content = __webpack_require__(715);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108533,8 +108561,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Relations.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Relations.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./Relations.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./Relations.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108544,7 +108572,7 @@ if(false) {
 }
 
 /***/ }),
-/* 692 */
+/* 715 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108558,13 +108586,13 @@ exports.push([module.i, ".relations {\n  width: 100%;\n  /*height: 100%;*/\n  he
 
 
 /***/ }),
-/* 693 */
+/* 716 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(694);
+var content = __webpack_require__(717);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -108578,8 +108606,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./prism.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./prism.css");
+		module.hot.accept("!!../../../node_modules/css-loader/index.js!./prism.css", function() {
+			var newContent = require("!!../../../node_modules/css-loader/index.js!./prism.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -108589,7 +108617,7 @@ if(false) {
 }
 
 /***/ }),
-/* 694 */
+/* 717 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(26)(undefined);
@@ -108601,6 +108629,12 @@ exports.push([module.i, "/**\n * prism.js default theme for JavaScript, CSS and 
 
 // exports
 
+
+/***/ }),
+/* 718 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "f87561b8bb354ef83b09a66e54f70e08.png";
 
 /***/ })
 /******/ ]);

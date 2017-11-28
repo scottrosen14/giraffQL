@@ -15,7 +15,7 @@ import App from './app/App.js';
 //STATIC FILES
 import graff from '../../assets/graff.png'
 import main from '../../assets/mainimage.png'
-import Octocat from '../GitHub-Mark-32px.png';
+import Octocat from '../../assets/GitHub-Mark-32px.png';
 
 
 
