@@ -14,7 +14,7 @@ import FileSaver from 'file-saver';
 import MenuComp from './AppMenu';
 import Visualization from './table/Visualization';
 import TextEditor from './code/TextEditor'
-import ExpressCode from '../code/ExpressCode'
+import ExpressCode from './code/ExpressCode'
 //PRISM DEPENDENCIES
 const PrismDecorator = require('draft-js-prism');
 const Prism = require('prismjs')
@@ -210,8 +210,8 @@ class App extends Component {
     const newData = {
       tables: newstate.data.tables.filter((table, i) => i !== tableIndex)
     }
-    // newstate.data.tables.splice(tableIndex, 1);
-    newstate.data.tables[tableIndex] = null;
+    newstate.data.tables.splice(tableIndex, 1);
+    // newstate.data.tables[tableIndex] = null;
     newstate.schemaCode = this.getTextFromModel(newData);
     newstate.jsCode = this.getExpressCode(newData);
     this.setState(newstate);
@@ -259,17 +259,19 @@ class App extends Component {
     this.setState(state => {
       //table
       let table = state.data.tables[tableIndex]
-      table.tablePositionX = table.x = Math.floor(tablePosition.left)
-      table.tablePositionY = table.y = Math.floor(tablePosition.top)
-      table.w = Math.floor(tablePosition.width)
-      table.h = Math.floor(tablePosition.height)
-      //rows
-      let attrs = state.data.tables[tableIndex].attributes
-      for (let i = 0; i < attrs.length; i += 1) {
-        attrs[i].x = Math.floor(rowPositions[i].left)
-        attrs[i].y = Math.floor(rowPositions[i].top)
-        attrs[i].w = Math.floor(rowPositions[i].width)
-        attrs[i].h = Math.floor(rowPositions[i].height)
+      if (table) {
+        table.tablePositionX = table.x = Math.floor(tablePosition.left)
+        table.tablePositionY = table.y = Math.floor(tablePosition.top)
+        table.w = Math.floor(tablePosition.width)
+        table.h = Math.floor(tablePosition.height)
+        //rows
+        let attrs = state.data.tables[tableIndex].attributes
+        for (let i = 0; i < attrs.length; i += 1) {
+          attrs[i].x = Math.floor(rowPositions[i].left)
+          attrs[i].y = Math.floor(rowPositions[i].top)
+          attrs[i].w = Math.floor(rowPositions[i].width)
+          attrs[i].h = Math.floor(rowPositions[i].height)
+        }
       }
       return state;
     })
@@ -324,6 +326,7 @@ class App extends Component {
       isFullscreenEnabled: this.state.isFullscreenEnabled ? false : true,
       open: false
     })
+  }
 
   // function which is called when you click for save schema js code
   saveTextAsFile = () => {

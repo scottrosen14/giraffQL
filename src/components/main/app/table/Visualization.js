@@ -201,7 +201,7 @@ class Visualization extends React.Component {
         return (
 
             <div className='visualization' onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp} onMouseMove={this.handleMouseMove}>
-            <Scrollbars style={{ height: '100%', width: '100%' }}>
+            <Scrollbars style={{ height: '10000px', width: '100%' }}>
                 <div className='toolbar'>
                         {/* <div class="button_base b02_slide_in">
                     {/* <div class="button_base b02_slide_in">
