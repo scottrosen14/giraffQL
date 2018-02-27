@@ -1,48 +1,9 @@
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-} */
-
 body {
   margin: 0;
   padding: 2em;
-  background: #333;
+  /* background: #333; */
   font-family: sans-serif;
   width:100%;
   height:100%;
-
-}
-
-.DraftEditor-root{
-  background: rgb(51,51,51);
-  margin: 0px;
-  padding: 0 10px;
-  border-radius: .3em;
-  /*border: 10px solid #BD9A63; #6F4A38;*/
-  font-size: 20px;
-  max-height: 1000px;
-  overflow: auto;
-  position: absolute;
-  font-family: 'Consolas', 'monaco', monospace;
-}
-
-button{
-  background: #999;
-  color: #fff;
-  border: none;
-  padding: .5em;
-  cursor: pointer;
-  margin-bottom: 1em;
-  margin-right: 1em;
-  border-radius: .2em;
-}
-
-button:hover{
-  background: #888;
-}
-
-
-.tabspace{
-  padding-left: 5em;
+  overflow: scroll;
 }
